@@ -56,5 +56,12 @@ public class DriveTrain {
     public double returnPosistionLeft(){return BackLeft.getSelectedSensorPosition(0);}
     public double returnPositionRight(){return BackRight.getSelectedSensorPosition(0);}
 
+    public void driveLeft(double leftValue) {
+        BackLeft.set(ControlMode.PercentOutput, leftValue);
+    }
+    public void driveRight(double rightValue) {
+        BackRight.set(ControlMode.PercentOutput, rightValue);
+    }
+
 
 }

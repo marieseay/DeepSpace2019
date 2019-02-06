@@ -3,8 +3,8 @@ package frc.team5115.robot.joysticks;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-public class VibrateMaster extends Controller{
-    public VibrateMaster(int port){
+public class LogitechMaster extends Controller{
+    public LogitechMaster(int port){
         forwardAxis = 1;
         turnAxis = 2;
         throttleIncrease = 8;

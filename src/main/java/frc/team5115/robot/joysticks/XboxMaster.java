@@ -3,8 +3,8 @@ package frc.team5115.robot.joysticks;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-public class RumbleMaster extends Controller{
-    public RumbleMaster(int port){
+public class XboxMaster extends Controller{
+    public XboxMaster(int port){
         forwardAxis = 0;
         throttleAxis = 3;
         turnAxis = 1;
