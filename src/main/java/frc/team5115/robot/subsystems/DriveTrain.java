@@ -22,7 +22,7 @@ public class DriveTrain {
     TalonSRX BackLeft;
 
 
-    public static ShuffleboardTab tab = Shuffleboard.getTab("tab1");
+    public static ShuffleboardTab tab = Shuffleboard.getTab("PID Values");
     NetworkTableEntry throttleValue;
 
     public DriveTrain() {
@@ -35,7 +35,7 @@ public class DriveTrain {
         BackRight.set(ControlMode.Follower, FrontRightMotorID);
         BackLeft.set(ControlMode.Follower, FrontLeftMotorID);
 
-        BackRight.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0,5);
+        FrontRight.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0,5);
         BackLeft.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0,5);
         throttleValue = tab.add("throttle2", 0).withWidget(BuiltInWidgets.kNumberSlider).getEntry();
     }
@@ -50,11 +50,23 @@ public class DriveTrain {
         FrontLeft.set(ControlMode.PercentOutput, (-yValue + xValue) * throttle);
         throttleValue.setDouble(throttle);
     }
-    public double returnVelocityLeft(){return BackLeft.getSelectedSensorVelocity(0);}
-    public double returnVelocityRight(){return BackRight.getSelectedSensorVelocity(0);}
+    public double returnVelocityLeft(){
+        System.out.println(BackLeft.getSelectedSensorVelocity(0));
+        return BackLeft.getSelectedSensorVelocity(0);
+    }
+    public double returnVelocityRight(){
+        System.out.println(FrontRight.getSelectedSensorVelocity(0));
+        return FrontRight.getSelectedSensorVelocity(0);
+    }
 
-    public double returnPosistionLeft(){return BackLeft.getSelectedSensorPosition(0);}
-    public double returnPositionRight(){return BackRight.getSelectedSensorPosition(0);}
+    public double returnPositionLeft(){
+        System.out.println(-BackLeft.getSelectedSensorPosition(0));
+        return -BackLeft.getSelectedSensorPosition(0);
+    }
+    public double returnPositionRight(){
+        System.out.print(FrontRight.getSelectedSensorPosition(0));
+        return FrontRight.getSelectedSensorPosition(0);
+    }
 
     public void driveLeft(double leftValue) {
         BackLeft.set(ControlMode.PercentOutput, leftValue);

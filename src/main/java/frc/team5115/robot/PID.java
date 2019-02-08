@@ -68,7 +68,9 @@ public class PID {
         return output;
     }
 
-
+    public void printPID() {
+        System.out.println(this.kp.getDouble(0));
+    }
     /**
      * Returns true if PID loop has settled. Takes tolerance in reading units and dErrorTolerance in reading units per second
      * @param tolerance
@@ -78,7 +80,6 @@ public class PID {
     public boolean isFinished(double tolerance, double dErrorTolerance) {
         return (Math.abs(error) < tolerance && Math.abs(dError) < dErrorTolerance);
     }
-
     public double getError() {
         return error;
     }
