@@ -31,9 +31,9 @@ public class PID {
      * @param loopName, name of the loop on shuffleboard
      */
     public PID(String loopName) {
-        kp = DriveTrain.tab.add("P" + loopName, 0).getEntry();
-        ki = DriveTrain.tab.add("I" + loopName, 0).getEntry();
-        kd = DriveTrain.tab.add("D" + loopName, 0).getEntry();
+        kp = DriveTrain.tab.add("P " + loopName, 0).getEntry();
+        ki = DriveTrain.tab.add("I " + loopName, 0).getEntry();
+        kd = DriveTrain.tab.add("D " + loopName, 0).getEntry();
     }
 
     /**

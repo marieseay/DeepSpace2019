@@ -22,6 +22,9 @@ public class Controller {
     int ExterminateBind;
     int RevivalBind;
 
+    int SuccOn;
+    int SuccOff;
+
     public Controller(){ this(0); }
 
     public Controller(int port){
@@ -35,6 +38,10 @@ public class Controller {
         throttleDecrease = 2;
         ExterminateBind = 13;
         RevivalBind = 12;
+
+        //Vacuum
+        SuccOn = 15;
+        SuccOff = 16;
     }
 
     public boolean controllerExists(){
@@ -74,5 +81,9 @@ public class Controller {
     public boolean getArmUp(){return stick.getRawButton(armUp);}
 
     public boolean getArmDown(){return stick.getRawButton(armDown);}
+
+    public boolean getSuccOn() { return stick.getRawButton(SuccOn);}
+
+    public boolean getSuccOff() { return stick.getRawButton(SuccOff);}
 
 }
