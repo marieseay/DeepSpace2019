@@ -10,10 +10,10 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import frc.team5115.robot.robot.Robot;
 
 public class DriveTrain {
-    int FrontRightMotorID = 4;
-    int FrontLeftMotorID = 3;
-    int BackRightMotorID = 2;
-    int BackLeftMotorID = 1;
+    int FrontRightMotorID = 2;
+    int FrontLeftMotorID = 1;
+    int BackRightMotorID = 3;
+    int BackLeftMotorID = 4;
     double throttle;
 
     TalonSRX FrontRight;
@@ -44,6 +44,7 @@ public class DriveTrain {
         FrontLeft.set(ControlMode.PercentOutput, 0);
     }
     public void Drive() {
+        throttle = Robot.joy.processThrottle();
         double xValue = Robot.joy.getTurn();
         double yValue = Robot.joy.getForward();
         FrontRight.set(ControlMode.PercentOutput, (yValue + xValue) * throttle);
@@ -51,23 +52,27 @@ public class DriveTrain {
         throttleValue.setDouble(throttle);
     }
     public double returnVelocityLeft(){
-        System.out.println(BackLeft.getSelectedSensorVelocity(0));
+        System.out.println("Velocity Left: "+ BackLeft.getSelectedSensorVelocity(0));
         return BackLeft.getSelectedSensorVelocity(0);
     }
     public double returnVelocityRight(){
-        System.out.println(FrontRight.getSelectedSensorVelocity(0));
+        System.out.println("Velocity Right: "+FrontRight.getSelectedSensorVelocity(0));
         return FrontRight.getSelectedSensorVelocity(0);
     }
 
     public double returnPositionLeft(){
-        System.out.println(-BackLeft.getSelectedSensorPosition(0));
-        return -BackLeft.getSelectedSensorPosition(0);
+        System.out.println("Position Left: "+-BackLeft.getSelectedSensorPosition(0));
+        return BackLeft.getSelectedSensorPosition(0);
     }
     public double returnPositionRight(){
-        System.out.print(FrontRight.getSelectedSensorPosition(0));
+        System.out.print("Position Right: "+FrontRight.getSelectedSensorPosition(0));
         return FrontRight.getSelectedSensorPosition(0);
     }
 
+    public void reset(){
+        FrontRight.setSelectedSensorPosition(0);
+        FrontLeft.setSelectedSensorPosition(0);
+    }
     public void driveLeft(double leftValue) {
         BackLeft.set(ControlMode.PercentOutput, leftValue);
     }

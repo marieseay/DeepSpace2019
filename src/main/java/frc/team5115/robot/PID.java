@@ -68,9 +68,9 @@ public class PID {
         return output;
     }
 
-    public void printPID() {
-        System.out.println(this.kp.getDouble(0));
-    }
+//    public void printPID() {
+//        System.out.println(this.kp.getDouble(0));
+//    }
     /**
      * Returns true if PID loop has settled. Takes tolerance in reading units and dErrorTolerance in reading units per second
      * @param tolerance

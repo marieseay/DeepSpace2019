@@ -20,6 +20,7 @@ public class Controller {
     int armDown;
 
     int ExterminateBind;
+    int RevivalBind;
 
     public Controller(){ this(0); }
 
@@ -32,7 +33,8 @@ public class Controller {
         turnAxis = 1;
         throttleIncrease = 1;
         throttleDecrease = 2;
-        ExterminateBind = 1;
+        ExterminateBind = 13;
+        RevivalBind = 12;
     }
 
     public boolean controllerExists(){
@@ -56,16 +58,18 @@ public class Controller {
     }
 
     public double getForward(){
-        return stick.getRawAxis(forwardAxis);
+        return -stick.getRawAxis(forwardAxis);
     }
 
     public double getTurn(){
-        return stick.getRawAxis(turnAxis);
+        return -stick.getRawAxis(turnAxis);
     }
 
     public boolean ExterminatePressed(){
         return stick.getRawButton(ExterminateBind);
     }
+
+    public boolean RevivalPressed(){return stick.getRawButton(RevivalBind);}
 
     public boolean getArmUp(){return stick.getRawButton(armUp);}
 

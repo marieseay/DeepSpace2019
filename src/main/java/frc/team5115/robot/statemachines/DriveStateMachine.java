@@ -8,9 +8,11 @@ public class DriveStateMachine extends StateMachineBase{
         switch(state){
             case STOP:
                 Robot.budgerobot.Exterminate();
+                System.out.println("not going");
                 break;
             case GO:
                 Robot.budgerobot.Drive();
+                System.out.println("drive");
                 break;
         }
     }
