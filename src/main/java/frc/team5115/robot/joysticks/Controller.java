@@ -40,8 +40,8 @@ public class Controller {
         RevivalBind = 12;
 
         //Vacuum
-        SuccOn = 15;
-        SuccOff = 16;
+        SuccOn = 9;
+        SuccOff = 8;
     }
 
     public boolean controllerExists(){
@@ -85,5 +85,7 @@ public class Controller {
     public boolean getSuccOn() { return stick.getRawButton(SuccOn);}
 
     public boolean getSuccOff() { return stick.getRawButton(SuccOff);}
+
+    public Joystick getJoy() {return stick;}
 
 }

@@ -7,20 +7,22 @@ import edu.wpi.first.wpilibj.Spark;
 import javax.naming.ldap.Control;
 
 public class Vacuum {
-//    public Spark mrSucc;
-    public TalonSRX mrSucc;
 
+    public TalonSRX mrSucc;
     public Vacuum() {
         mrSucc = new TalonSRX(0);
     }
 
     public void succ() {
-        mrSucc.set(ControlMode.PercentOutput, -.3);
+        mrSucc.set(ControlMode.PercentOutput, 1);
     }
 
     public void stop() {
         mrSucc.set(ControlMode.PercentOutput, 0);
     }
 
-    public void blow() {mrSucc.set(ControlMode.PercentOutput, .3);}
+    /**TESTING PURPOSES ONLY**/
+    public void armDown() {
+        mrSucc.set(ControlMode.PercentOutput, -.5);
+    }
 }

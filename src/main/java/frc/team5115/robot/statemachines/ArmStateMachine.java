@@ -1,6 +1,6 @@
 package frc.team5115.robot.statemachines;
 
-import frc.team5115.robot.robot.Robot;
+import frc.team5115.robot.Robot;
 
 public class ArmStateMachine extends StateMachineBase {
     public static final int GO = 1;

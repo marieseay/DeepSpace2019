@@ -7,7 +7,7 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
-import frc.team5115.robot.robot.Robot;
+import frc.team5115.robot.Robot;
 
 public class DriveTrain {
     int FrontRightMotorID = 2;
@@ -52,20 +52,20 @@ public class DriveTrain {
         throttleValue.setDouble(throttle);
     }
     public double returnVelocityLeft(){
-        System.out.println("Velocity Left: "+ BackLeft.getSelectedSensorVelocity(0));
+//        System.out.println("Velocity Left: "+ BackLeft.getSelectedSensorVelocity(0));
         return BackLeft.getSelectedSensorVelocity(0);
     }
     public double returnVelocityRight(){
-        System.out.println("Velocity Right: "+FrontRight.getSelectedSensorVelocity(0));
+//        System.out.println("Velocity Right: "+FrontRight.getSelectedSensorVelocity(0));
         return FrontRight.getSelectedSensorVelocity(0);
     }
 
     public double returnPositionLeft(){
-        System.out.println("Position Left: "+-BackLeft.getSelectedSensorPosition(0));
+//        System.out.println("Position Left: "+-BackLeft.getSelectedSensorPosition(0));
         return BackLeft.getSelectedSensorPosition(0);
     }
     public double returnPositionRight(){
-        System.out.print("Position Right: "+FrontRight.getSelectedSensorPosition(0));
+  //      System.out.print("Position Right: "+FrontRight.getSelectedSensorPosition(0));
         return FrontRight.getSelectedSensorPosition(0);
     }
 
